@@ -1,0 +1,219 @@
+body{
+    background-color: #000;
+}
+
+/*----------------------------------loading-------------------------------*/
+.loading {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999999999999;
+  overflow: hidden;
+  
+}
+
+.loader {
+  position: relative;
+  width: 120px;
+  height: 14px;
+  border-radius: 0 0 15px 15px;
+  background-color: #3e494d;
+  box-shadow: 0 -1px 4px #5d6063 inset;
+  animation: panex 0.5s linear alternate infinite;
+  transform-origin: 170px 0;
+  z-index: 10;
+  perspective: 500px;
+
+}
+.loader::before {
+content: '';
+position: absolute;
+left: calc( 100% - 2px);
+top: 0;
+z-index: -2;
+height: 10px;
+width: 70px;
+border-radius: 0 4px 4px 0;
+background-repeat: no-repeat;
+background-image: linear-gradient(#6c4924, #4b2d21), linear-gradient(#4d5457 24px, transparent 0), linear-gradient(#9f9e9e 24px, transparent 0);
+background-size: 50px 10px , 4px 8px , 24px 4px;
+background-position: right center , 17px center , 0px center;
+}
+.loader::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  z-index: -2;
+  transform: translate(-50% , -20px) rotate3d(75, -2, 3, 78deg);
+  width: 55px;
+  height: 53px;
+  background: #fff;
+  background-image:
+  radial-gradient(circle 3px , #fff6 90%, transparent 10%),
+  radial-gradient(circle 12px , #ffc400 90%, transparent 10%),
+  radial-gradient(circle 12px , #ffae00 100%, transparent 0);
+  background-repeat: no-repeat;
+  background-position: -4px -6px , -2px -2px , -1px -1px;
+  box-shadow: -2px -3px #0002 inset, 0 0 4px #0003 inset;
+  border-radius: 47% 36% 50% 50% / 49% 45% 42% 44%;
+  animation: eggRst 1s ease-out infinite;
+}
+
+@keyframes eggRst {
+0% ,  100%{  transform: translate(-50%, -20px) rotate3d(90, 0, 0, 90deg); opacity: 0; }
+10% , 90% {  transform: translate(-50%, -30px) rotate3d(90, 0, 0, 90deg); opacity: 1; }
+25%  {transform:  translate(-50% , -40px) rotate3d(85, 17, 2, 70deg) }
+75% {transform:  translate(-50% , -40px) rotate3d(75, -3, 2, 70deg) }
+50% {transform:  translate(-55% , -50px) rotate3d(75, -8, 3, 50deg) }
+}
+@keyframes panex {
+0%{  transform: rotate(-5deg)  }
+100%{  transform: rotate(10deg)  }
+}
+
+/*-------------------------------------- nav button ------------------------------------*/
+
+/*------------------------------- nav style -----------------------------*/
+nav{
+    width: 350px;
+    background-color: rgb(42, 42, 82);
+    left: -283.84px !important;
+}
+.left-nav{
+  width: 83%;
+}
+.left-nav ul li {
+    padding-top: 15px;
+    cursor: pointer;
+}
+.right-nav ul li {
+    cursor: pointer;
+}
+.right-nav img{
+    width: 50px
+}
+
+
+
+.nav-in{
+  transform: translateX(283.84px);
+  transition: 0.5s;
+}
+.nav-out{
+  transform: translateX(0px);
+  transition: 0.5s;
+}
+
+
+.animate__animated.animate__slideInDown{
+  --animate-duration: 1s;
+}
+
+.close,.open{
+  cursor: pointer;
+}
+
+/*-------------------------------------------- Home --------------------------------------------------------------*/
+.overlay{
+  top: 0%;
+  bottom: 0%;
+  left: 12px;
+  right: 12px;
+  transform: translateY(100%);
+  transition: 0.5s;
+  background-color: rgba(240, 248, 255, 0.705);
+}
+.meal:hover .overlay{
+  transform: translateY(0%);
+}
+
+/*--------------------------------Searh--------------------------------------------*/
+.form-control {
+background-color: #000;
+color: #fff !important;
+}
+.form-control:focus{
+background-color: #000;
+color: #dfd6d6 !important;
+}
+
+::placeholder{
+  color: #ffffff8e !important;
+  font-weight: lighter;
+}
+
+/*-------------------------------------------category-------------------------------------*/
+.categoryDDesc{
+  overflow: hidden;
+
+}
+
+/*----------------------------------------area-------------------------------------*/
+
+.areaIcon{
+  font-size: 70px !important;
+}
+
+.ingrediantDesc{
+  overflow: hidden !important;
+  max-height: 70px;
+}
+/*------------------------------------------ingradient-----------------------------------------*/
+.ingrad-list li{
+  background-color: #CFF4FC;
+  color: #066a8f;
+  padding:7px 10px;
+  border-radius: 8px;
+}
+
+.type{ 
+  width: fit-content;
+  background-color: #F8D7DA;
+  color: #93205C;
+  padding:7px 10px;
+  border-radius: 8px;
+}
+
+.ingradSrc li{
+  background-color: #CFF4FC;
+  color: #ffffffbe;
+  padding:7px 10px;
+  border-radius: 8px;
+}
+.ingradSrc .scr{
+  background-color: #157347;
+}
+.ingradSrc .yout{
+  background-color: #BB2D3B;
+}
+
+@media screen and (max-width:600px){
+  .detealsPage{
+    width: 330px;
+    /* padding-left: 15px; */
+  }
+
+
+  .contact-cont{
+    width: 100%;
+  }
+}
+
+/*------------------------------------contact---------------------------------*/
+
+
+.form-control.contact-input {
+  background-color: #FFF;
+  color: #000 !important;
+}
+.form-control.contact-input::placeholder {
+  color: #000 !important;
+}
+
